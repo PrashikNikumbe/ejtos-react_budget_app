@@ -21,7 +21,7 @@ const CurrencyDropdown = () => {
       variant="success"
       id="dropdown-item-button"
       title={"Currency" + " (" + currency + ")"}
-      style={{ backgroundColor: "#73e69f !important" }}
+      style={{ backgroundColor: "#73e69f !important" , marginTop:10}}
       onSelect={changeHandler}
     >
       <Dropdown.Item as="button" eventKey="$ Dollar">$ Dollar</Dropdown.Item>

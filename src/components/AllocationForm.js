@@ -11,11 +11,7 @@ const AllocationForm = (props) => {
 
     const submitEvent = () => {
 
-            if(cost > remaining) {
-                alert("The value cannot exceed remaining funds  £"+remaining);
-                setCost("");
-                return;
-            }
+
 
         const expense = {
             name: name,
@@ -27,6 +23,11 @@ const AllocationForm = (props) => {
                 payload: expense,
             });
         } else {
+            if(cost > remaining) {
+                alert("The value cannot exceed remaining funds  £"+remaining);
+                setCost("");
+                return;
+            }
                 dispatch({
                     type: 'ADD_EXPENSE',
                     payload: expense,

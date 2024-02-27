@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const Budget = () => {
-    const { budget } = useContext(AppContext);
+    const { budget,dispatch } = useContext(AppContext);
     const { expenses } = useContext(AppContext);
     const { currency } = useContext(AppContext);
 
@@ -21,6 +21,10 @@ const Budget = () => {
             return  
         }
         setNewBudget(event.target.value);
+        dispatch({
+            type: 'SET_BUDGET',
+            payload: event.target.value
+        });
 
 
     }
